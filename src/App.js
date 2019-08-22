@@ -5,11 +5,6 @@ import Maincomponent from "./components/Maincomponent";
 import { connect } from 'react-redux';
 import { getRepoList } from './actions';
 class App extends React.Component{
-  constructor(props){
-    super(props);
-    
-    console.log('fef',this.props)
-  }
   componentDidMount(){
     let params = (new URL(document.location)).searchParams;
     let location = params.get("location") || 'india';

@@ -4,8 +4,6 @@ import { connect } from 'react-redux';
 import { getRepoList } from './../actions';
 import {  Item } from 'semantic-ui-react'
 
-// const paragraph = <Image src='https://react.semantic-ui.com/images/wireframe/short-paragraph.png' />
-
 class Maincomponent extends React.Component{
   render(){
     console.log('himealone',this.props.repoData)
