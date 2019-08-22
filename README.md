@@ -1,7 +1,7 @@
 
 ### Tech
 
-Dillinger uses a number of open source projects to work properly:
+Tech stack used:
 
 * [ReactJS] - HTML enhanced for web apps!
 * [Redux] - For state management!
