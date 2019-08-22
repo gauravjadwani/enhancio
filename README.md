@@ -23,9 +23,5 @@ $ npm install
 $ npm run start | npm run dev
 ```
 
-For production environments...
-
-```sh
-$ npm install --production
-$ NODE_ENV=production node app
-```
+For usage...
+http://localhost:3000/?location=india
