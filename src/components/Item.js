@@ -3,7 +3,6 @@ import { Item } from 'semantic-ui-react';
 
  const CustomItems = (props) => 
  {
-     console.log('CustomItems',props)
  return (
       <Item>
         <Item.Image size="tiny" src={props.data.owner.avatar_url}/>
