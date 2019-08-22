@@ -4,43 +4,29 @@ import { BASE_URL } from '../constants/constants';
 import { GET_DATA } from './types';
 import axios from 'axios';
 
-export const getRepoList = () => {
+export const getRepoList = (location) => {
     return dispatch => {
       axios
       .get(BASE_URL, {
         params: {
-          q: 'kanpur',
+          q: location,
           sort: 'stars',
           order: 'desc',
         },
       })
       .then(function(response) {
         if (response.status === 200) {
-          console.log('action', response.data)
+          console.log('action',response.data.items )
+          dispatch({
+            type: GET_DATA,
+            payload: response.data.items,
+          });
         } else {
-          // dispatch({
-          //   type: GET_REPORT,
-          //   payload: 'error',
-          // });
-        }
-      });
-      // const apiObject = new Api(defaultHeaders(), false, error =>
-      //   handleErrorDefault(error, dispatch),
-      // );
-      // apiObject.get(BASE_URL+'?q=kanpur&sort=stars&order=desc').then(function(response) {
-      //   if (response.status === 200) {
-      //   //   setStorage('clientDetails', JSON.stringify(response.data));
-      //   console.log('action', response.dat)
-      //     dispatch({
-      //       type: GET_DATA,
-      //       payload: response.data,
-      //     });
-      //   } else {
-      //     dispatch({
-      //       type: GET_CLIENT_DETAILS,
-      //       payload: 'error',
-      //     });
-      //   }
-      // });
-    };
-  };
+          dispatch({
+            type: GET_DATA,
+            payload: 'INCORRECT_LOCATION'
+          });
+         }
+      })
+    }
+}
